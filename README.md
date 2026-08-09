@@ -1,24 +1,47 @@
 # Library Management System
 
-A full-stack web application developed to manage common library operations such as books, students, book issuing, returns, transactions, overdue books, and fine calculation.
+A full-stack web-based Library Management System developed using React and FastAPI. The application provides a centralized interface for managing books, students, book issue and return operations, transaction history, overdue books, and fine calculation.
 
-The project has a React frontend and a FastAPI backend with SQLite as the database.
+The project follows a frontend-backend architecture where the React application communicates with REST APIs provided by FastAPI. SQLAlchemy is used for database operations with SQLite as the database.
 
-## Overview
+---
 
-The Library Management System provides a simple interface for managing library records digitally.
+## Project Overview
 
-An administrator can manage books and students, issue books, process returns, view transaction history, and track overdue books and fines from a single application.
+The Library Management System is designed to simplify common library management activities and reduce manual record keeping.
 
-## Features
+The system provides an administrator with a dashboard to monitor library activity and dedicated modules for managing books, students, and transactions.
+
+The main operations supported by the application are:
+
+- Managing books
+- Managing students
+- Issuing books
+- Returning books
+- Maintaining transaction history
+- Tracking overdue books
+- Calculating fines
+- Viewing library statistics
+- Admin authentication
+
+---
+
+## Key Features
 
 ### Authentication
+
 - Admin login
 - JWT-based authentication
-- Protected application access
+- Secure token generation and verification
+- Authentication API using FastAPI
 
 ### Dashboard
-- Total number of books
+
+The dashboard provides an overview of the current library status.
+
+It displays:
+
+- Total books
 - Available books
 - Issued books
 - Total students
@@ -27,34 +50,96 @@ An administrator can manage books and students, issue books, process returns, vi
 - Most available books
 
 ### Book Management
-- Add new books
-- Edit book details
+
+The book management module provides complete CRUD functionality.
+
+Features include:
+
+- Add a new book
+- View all books
+- Edit book information
 - Delete books
 - Search books
-- Track total and available quantities
+- Track total quantity
+- Track available quantity
+- Store ISBN information
+- Store author and category information
 
 ### Student Management
+
+The student module allows the administrator to manage student records.
+
+Features include:
+
 - Add students
-- Edit student details
+- View students
+- Edit student information
 - Delete students
 - Search students
+- Store student name
+- Store email
+- Store phone number
 
-### Book Transactions
-- Issue books to students
-- Set due dates
-- Return issued books
-- View complete transaction history
-- Track returned and currently issued books
+### Issue Book
+
+The issue module allows an administrator to issue an available book to a student.
+
+The system:
+
+1. Verifies the selected student.
+2. Verifies the selected book.
+3. Checks book availability.
+4. Decreases the available book quantity.
+5. Creates a transaction record.
+6. Stores the issue date and due date.
+
+### Return Book
+
+The return module displays currently issued books and allows them to be returned.
+
+When a book is returned:
+
+1. The transaction is verified.
+2. The return status is checked.
+3. The book availability is increased.
+4. The return date is recorded.
+5. The fine is calculated if the book is overdue.
+
+### Transaction History
+
+The transaction history module provides a complete record of library transactions.
+
+It displays:
+
+- Transaction ID
+- Student
+- Book
+- Issue date
+- Due date
+- Return date
+- Fine
+
+Transactions that have not yet been returned are displayed as currently issued.
 
 ### Overdue Books
-- View currently overdue books
-- Calculate number of overdue days
-- Calculate estimated fine
-- Display student and book details
+
+The overdue books module identifies books that:
+
+- Have not been returned
+- Have a due date earlier than the current date
+
+The module displays:
+
+- Student name
+- Book title
+- Issue date
+- Due date
+- Number of overdue days
+- Estimated fine
 
 ### Fine Calculation
 
-The current fine calculation is based on the number of overdue days.
+The current fine calculation is:
 
 ```text
 Fine = Number of Overdue Days × ₹10
