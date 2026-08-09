@@ -1,27 +1,20 @@
-# Python virtual environment
+# Python
 venv/
-.venv/
-
-# Python cache
 __pycache__/
-*.py[cod]
-*$py.class
+*.pyc
+*.pyo
+*.pyd
 
-# Environment variables
+# Environment files
 .env
 .env.*
 
-# SQLite database
+# Database
 *.db
-*.sqlite3
 
-# IDE
-.vscode/
-.idea/
-
-# Operating system
-.DS_Store
-Thumbs.db
+# Node
+node_modules/
+dist/
 
 # Logs
 *.log
