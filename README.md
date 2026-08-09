@@ -51,34 +51,23 @@ It displays:
 
 ### Book Management
 
-The book management module provides complete CRUD functionality.
-
-Features include:
-
-- Add a new book
+- Add new books
 - View all books
 - Edit book information
 - Delete books
 - Search books
 - Track total quantity
 - Track available quantity
-- Store ISBN information
-- Store author and category information
+- Store ISBN, author, and category information
 
 ### Student Management
-
-The student module allows the administrator to manage student records.
-
-Features include:
 
 - Add students
 - View students
 - Edit student information
 - Delete students
 - Search students
-- Store student name
-- Store email
-- Store phone number
+- Store student name, email, and phone number
 
 ### Issue Book
 
@@ -95,8 +84,6 @@ The system:
 
 ### Return Book
 
-The return module displays currently issued books and allows them to be returned.
-
 When a book is returned:
 
 1. The transaction is verified.
@@ -107,9 +94,7 @@ When a book is returned:
 
 ### Transaction History
 
-The transaction history module provides a complete record of library transactions.
-
-It displays:
+The transaction history displays:
 
 - Transaction ID
 - Student
@@ -119,16 +104,11 @@ It displays:
 - Return date
 - Fine
 
-Transactions that have not yet been returned are displayed as currently issued.
-
 ### Overdue Books
 
-The overdue books module identifies books that:
+The system identifies books that have not been returned and have passed their due date.
 
-- Have not been returned
-- Have a due date earlier than the current date
-
-The module displays:
+The overdue module displays:
 
 - Student name
 - Book title
