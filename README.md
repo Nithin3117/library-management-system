@@ -220,89 +220,6 @@ library-management-system/
 
 ---
 
-## Book Issue Logic
-
-When a book is issued, the backend performs the following operations:
-
-```text
-Select Student
-      |
-      v
-Check Student
-      |
-      v
-Select Book
-      |
-      v
-Check Book Availability
-      |
-      v
-Decrease Available Quantity
-      |
-      v
-Create Transaction
-```
-
-The transaction stores:
-
-- Student ID
-- Book ID
-- Issue date
-- Due date
-- Initial fine
-
----
-
-## Book Return Logic
-
-When a book is returned:
-
-```text
-Select Transaction
-      |
-      v
-Check Transaction
-      |
-      v
-Check Return Status
-      |
-      v
-Increase Book Availability
-      |
-      v
-Set Return Date
-      |
-      v
-Calculate Fine
-      |
-      v
-Update Transaction
-```
-
-A transaction that has already been returned cannot be returned again.
-
----
-
-## Overdue Logic
-
-A transaction is considered overdue when:
-
-```text
-Return Date = NULL
-AND
-Due Date < Current Date
-```
-
-For every overdue transaction, the system calculates:
-
-```text
-Days Overdue = Current Date - Due Date
-
-Estimated Fine = Days Overdue × ₹10
-```
-
----
-
 ## Running the Project Locally
 
 ### Prerequisites
@@ -417,20 +334,6 @@ ADMIN_PASSWORD=your_admin_password
 The `.env` file should not be committed to GitHub.
 
 Sensitive information such as passwords, secret keys, and other private configuration values should never be uploaded to the repository.
-
----
-
-## API Documentation
-
-FastAPI provides interactive API documentation through Swagger UI.
-
-After starting the backend, open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-The Swagger interface can be used to explore and test the available API endpoints.
 
 ---
 
