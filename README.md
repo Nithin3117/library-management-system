@@ -1,99 +1,145 @@
-# 📚 Library Management System
+# Library Management System
 
-A full-stack Library Management System built with **React** and **FastAPI** to manage books, students, book transactions, returns, overdue books, and fines through a simple web interface.
+A full-stack web-based Library Management System developed using React and FastAPI. The application provides a centralized interface for managing books, students, book issue and return operations, transaction history, overdue books, and fine calculation.
 
-## ✨ Features
+The project follows a frontend-backend architecture where the React application communicates with REST APIs provided by FastAPI. SQLAlchemy is used for database operations with SQLite as the database.
 
-- 🔐 Admin Login
-- 📊 Dashboard with library statistics
-- 📚 Book Management
-  - Add books
-  - Edit books
-  - Delete books
-  - Search books
-  - Track book availability
-- 👨‍🎓 Student Management
-  - Add students
-  - Edit students
-  - Delete students
-  - Search students
-- 📖 Issue Books
-- 🔄 Return Books
-- 📋 Transaction History
-- ⏰ Overdue Book Tracking
-- 💰 Automatic Fine Calculation
-- 🔔 Toast Notifications
-- 📈 Library Statistics Chart
-- 🕒 Recent Transactions
-- 📚 Most Available Books
+---
 
-## 🛠️ Technologies Used
+## Project Overview
 
-### Frontend
+The Library Management System is designed to simplify common library management activities and reduce manual record keeping.
 
-- React
-- Vite
-- JavaScript
-- React Router
-- Axios
-- Tailwind CSS
-- Recharts
-- React Icons
-- React Toastify
+The system provides an administrator with a dashboard to monitor library activity and dedicated modules for managing books, students, and transactions.
 
-### Backend
+The main operations supported by the application are:
 
-- Python
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- JWT Authentication
-- Uvicorn
+- Managing books
+- Managing students
+- Issuing books
+- Returning books
+- Maintaining transaction history
+- Tracking overdue books
+- Calculating fines
+- Viewing library statistics
+- Admin authentication
 
-### Database
+---
 
-- SQLite
+## Key Features
 
-## 🏗️ Project Structure
+### Authentication
+
+- Admin login
+- JWT-based authentication
+- Secure token generation and verification
+- Authentication API using FastAPI
+
+### Dashboard
+
+The dashboard provides an overview of the current library status.
+
+It displays:
+
+- Total books
+- Available books
+- Issued books
+- Total students
+- Library statistics chart
+- Recent transactions
+- Most available books
+
+### Book Management
+
+The book management module provides complete CRUD functionality.
+
+Features include:
+
+- Add a new book
+- View all books
+- Edit book information
+- Delete books
+- Search books
+- Track total quantity
+- Track available quantity
+- Store ISBN information
+- Store author and category information
+
+### Student Management
+
+The student module allows the administrator to manage student records.
+
+Features include:
+
+- Add students
+- View students
+- Edit student information
+- Delete students
+- Search students
+- Store student name
+- Store email
+- Store phone number
+
+### Issue Book
+
+The issue module allows an administrator to issue an available book to a student.
+
+The system:
+
+1. Verifies the selected student.
+2. Verifies the selected book.
+3. Checks book availability.
+4. Decreases the available book quantity.
+5. Creates a transaction record.
+6. Stores the issue date and due date.
+
+### Return Book
+
+The return module displays currently issued books and allows them to be returned.
+
+When a book is returned:
+
+1. The transaction is verified.
+2. The return status is checked.
+3. The book availability is increased.
+4. The return date is recorded.
+5. The fine is calculated if the book is overdue.
+
+### Transaction History
+
+The transaction history module provides a complete record of library transactions.
+
+It displays:
+
+- Transaction ID
+- Student
+- Book
+- Issue date
+- Due date
+- Return date
+- Fine
+
+Transactions that have not yet been returned are displayed as currently issued.
+
+### Overdue Books
+
+The overdue books module identifies books that:
+
+- Have not been returned
+- Have a due date earlier than the current date
+
+The module displays:
+
+- Student name
+- Book title
+- Issue date
+- Due date
+- Number of overdue days
+- Estimated fine
+
+### Fine Calculation
+
+The current fine calculation is:
 
 ```text
-library-management-system/
-│
-├── backend/
-│   ├── app/
-│   │   ├── routes/
-│   │   │   ├── auth.py
-│   │   │   ├── books.py
-│   │   │   ├── dashboard.py
-│   │   │   ├── students.py
-│   │   │   └── transactions.py
-│   │   │
-│   │   ├── auth.py
-│   │   ├── crud.py
-│   │   ├── database.py
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   └── security.py
-│   │
-│   ├── requirements.txt
-│   └── README.md
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── index.css
-│   │   └── main.jsx
-│   │
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── vite.config.js
-│   └── README.md
-│
-├── .gitignore
-└── README.md
+Fine = Number of Overdue Days × ₹10
