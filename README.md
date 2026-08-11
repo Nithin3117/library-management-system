@@ -394,25 +394,6 @@ Possible improvements for future versions include:
 
 ---
 
-## Project Purpose
-
-This project was developed as a practical full-stack application to understand and implement:
-
-- Frontend development using React
-- Backend API development using FastAPI
-- REST API communication
-- Database operations using SQLAlchemy
-- SQLite database management
-- Authentication using JWT
-- CRUD operations
-- Frontend and backend integration
-- Real-world library transaction workflows
-- Full-stack application deployment
-
-The project focuses on building a complete working application rather than implementing isolated features.
-
----
-
 ## Author
 
 **Nithin Bollineni**
