@@ -10,7 +10,6 @@ from app.routes import books, students, transactions, dashboard, auth
 Base.metadata.create_all(bind=engine)
 
 
-# Create FastAPI application
 app = FastAPI(
     title="Library Management System API",
     version="1.0.0"
@@ -21,9 +20,9 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:5173",
-    "https://library-management-system-beta-nine-79.vercel.app"
-],
+        "http://localhost:5173",
+        "https://library-management-system-beta-nine-79.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
