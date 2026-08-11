@@ -394,8 +394,12 @@ Possible improvements for future versions include:
 
 ---
 
+---
+
 ## Author
 
-**Nithin Bollineni**
+Nithin Bollineni
 
 GitHub: https://github.com/Nithin3117
+
+Live Website: https://library-management-system-beta-nine-79.vercel.app
