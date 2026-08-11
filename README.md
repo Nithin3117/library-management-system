@@ -337,6 +337,22 @@ Sensitive information such as passwords, secret keys, and other private configur
 
 ---
 
+## Deployment
+
+The application is deployed as separate frontend and backend services.
+
+### Frontend
+
+The React frontend is deployed using Vercel.
+
+### Backend
+
+The FastAPI backend is deployed using Render.
+
+The frontend communicates with the deployed FastAPI backend through the configured API URL.
+
+---
+
 ## Project Highlights
 
 - Full-stack React and FastAPI architecture
@@ -357,6 +373,7 @@ Sensitive information such as passwords, secret keys, and other private configur
 - Loading states
 - Toast notifications
 - Separate frontend and backend structure
+- Live frontend and backend deployment
 
 ---
 
@@ -373,7 +390,7 @@ Possible improvements for future versions include:
 - Improved reporting and analytics
 - PostgreSQL for production use
 - Automated testing
-- Cloud deployment
+- Cloud deployment improvements
 
 ---
 
@@ -390,6 +407,7 @@ This project was developed as a practical full-stack application to understand a
 - CRUD operations
 - Frontend and backend integration
 - Real-world library transaction workflows
+- Full-stack application deployment
 
 The project focuses on building a complete working application rather than implementing isolated features.
 
